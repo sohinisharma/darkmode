@@ -1,0 +1,47 @@
+.toggle-container{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.toggle{
+    visibility: hidden;
+    
+}
+
+.toggle + label{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--primary-text-color);
+}
+
+.toggle +label::before{
+    content: "";
+    height: 20px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: var(--toggle-bg);
+    margin-right: 10px;
+    transition: background-color 250ms ease-in-out;
+}
+
+.toggle +label::after{
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 15px;
+    background-color: var(--toggle-fg);
+    position: absolute;
+    margin-left: 5px;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+
+}
+
+.toggle:checked + label::after{
+    transform: translateX(100%);
+}
+
+
+
